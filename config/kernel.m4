@@ -422,7 +422,7 @@ AC_DEFUN([ZFS_AC_SPL], [
 
 		splsrcver=`(echo "#include <spl_config.h>";
 		            echo "splsrcver=SPL_META_VERSION-SPL_META_RELEASE") |
-		            cpp -I $splbuild |
+		            ${CPP} -I $splbuild - |
 		            grep "^splsrcver=" | tr -d \" | cut -d= -f2`
 	])
 
